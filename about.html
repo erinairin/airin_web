@@ -1,0 +1,476 @@
+<html>
+<head>
+</head>
+<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <title>About Airin</title>
+ <nav>
+    <img src="image/logo.png" class="logo" alt="Logo">
+            <ul>
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="family.html">FAMILY</a></li>
+        <li><a href="edu.html">EDUCATION</a></li>
+        <li><a href="experience.html">EXPERIENCES</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+            </ul>
+</nav>
+
+<style>
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky; 
+    top: 0;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 5px 10%;
+    z-index: 1000;
+    font-family: Arial, sans-serif; 
+}
+
+nav img.logo {
+    width: 160px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease; 
+    font-family: Arial, sans-serif; 
+}
+
+nav ul li a:hover {
+    background: brown;
+    color: white;
+}
+
+nav ul li a.active {
+    background: #333;
+    color: white;
+}
+
+body {
+    font-family: arial; 
+    margin: 0;
+    padding: 0;
+    background-color: #eff4fd;
+}
+
+body {
+    background-image: url('image/lily.jpg'); 
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+h1 {
+    text-align: center;
+    color: brown;
+    font-family: "Times New Roman", serif; 
+}
+
+p {
+    line-height: 1.8;
+    margin: 3% 10%;
+    text-align: justify;
+    color: brown;
+    font-family: "arial";
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+.section {
+    padding: 20px;
+    margin: 10px 5%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section.bg-beige {
+    background-color: #d8e8fc; 
+    color: brown;
+}
+
+.section.bg-lightblue {
+    background-color: #eff4fd; 
+    color: brown;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center; 
+    gap: 20px;                
+    flex-wrap: nowrap;       
+}
+
+.flex-item {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    text-align: center;     
+}
+
+.flex-item img {
+    width: 300px;            
+    height: 300px;          
+    object-fit: cover;       
+    border-radius: 10px;     
+}
+
+.flex-item p {
+    color: brown;           
+    margin-top: 10px;        
+    font-size: 14px;        
+}
+
+.audio-container audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+    .song-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .song-item {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .song-item:hover {
+        transform: scale(1.05);
+    }
+
+    .song-cover {
+        margin-bottom: 15px;
+    }
+
+    .cover-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .song-info h3 {
+        color: brown;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    audio {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+button {
+    background-color: brown;
+    color: beige;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8a624a;
+}
+
+.random-things-list {
+    list-style: decimal; 
+    padding-left: 30px; 
+    margin: 0;
+}
+
+.random-things-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.random-things-list li span {
+    flex: 1; 
+    font-size: 18px;
+    color: brown;
+}
+
+.inline-gif {
+    width: 50px; 
+    height: 50px; 
+    margin-left: 10px; 
+    border-radius: 5px; 
+}
+
+@media (max-width: 768px) {
+    .flex-item {
+        flex: 1 1 100%;
+    }
+
+    p {
+        margin: 5%;
+    }
+
+    footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 10px;
+        font-size: 14px;
+    }
+        body {
+            font-family: arial; 
+            background-color: #eff4fd;
+            color: brown;
+        }
+
+        h1 {
+            text-align: center;
+            color: brown;
+        }
+
+        .section {
+            padding: 20px;
+            margin: 10px 5%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section.bg-beige {
+            background-color: #d8e8fc; 
+        }
+
+        button {
+            background-color: brown;
+            color: beige;
+            border: none;
+            border-radius: 5px;
+            padding: 20px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #8a624a;
+        }
+	@keyframes marqueeEffect {
+	  0% { background-color: pink; }
+  	  50% { background-color: lavender; }
+  	  100% { background-color: pink; }
+	}
+</style>
+
+
+<center>
+    <br>
+<marquee style="background-color: pink; padding: 1px; border-radius: 40px; font-family: 'Courier New', Courier, monospace; animation: marqueeEffect 10s linear infinite;">
+  <h2 style="color: mediumvioletred; font-size: 30px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+    <b><i>✨ Welcome to the <big>"Get To Know Me Better"</big> Space! ✨</i></b>
+  </h2>
+</marquee>
+</center>
+
+<div class="section bg-beige">
+    <h1>Background Story</h1>
+    
+    <table border="1" cellpadding="10" cellspacing="0" style="width: 80%; margin: 0 auto; border-collapse: collapse; background-color: #f9f9f9; color: brown;">
+        <tr>
+            <th colspan="2" style="background-color: brown; color: white; font-size: 24px;">Personal Information</th>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Name</td>
+            <td>Airin Shauqina Binti Ariffin</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Date of Birth</td>
+            <td>14<sup>th</sup> August 2004</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Place of Birth</td>
+            <td>Subang Jaya Medical Centre <sub>SJMC</sub></td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Hometown</td>
+            <td>Rawang, Selangor</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Family</td>
+            <td>Parents, 2 Brothers, 2 Sisters</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;">Personality</td>
+            <td>Introvert, prefers socializing with close friends</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center; font-style: italic; color: chocolate; font-weight: bold;">
+                I never really like to talk about myself, so this personal website really means something to me as I highlight all the important people in my life.
+            </td>
+        </tr>
+    </table>
+</div>
+<body>
+
+<div class="section bg-lightblue">
+    <h1>My Favourite Foods</h1>
+    <div class="flex-container">
+        <div class="flex-item">
+            <img src="image/nasikandar.jpg" alt="Nasi Kandar">
+            <p style="color: brown;">Nasi Kandar</p>
+        </div>
+        <div class="flex-item">
+            <img src="image/sambal.jpg" alt="Sambal ibu n nenek">
+            <p style="color: brown;">Sambal</p>
+        </div>
+        <div class="flex-item">
+            <img src="image/ayamgepuk.jpg" alt="Nasi Ayam Gepuk">
+            <p style="color: brown;">Nasi Ayam Gepuk</p>
+        </div>
+    </div>
+</div>
+
+<div class="section bg-beige">
+    <h1>My Favourite Drinks</h1>
+    <div class="flex-container">
+        <div class="flex-item">
+            <img src="image/matcha.jpg" alt="Matcha">
+            <p style="color: brown;">Matcha</p>
+        </div>
+        <div class="flex-item">
+            <img src="image/jasmine.jpg" alt="Jasmine Milk Tea">
+            <p style="color: brown;">Jasmine Milk Tea</p>
+        </div>
+        <div class="flex-item">
+            <img src="image/coffee.png" alt="Spanish Latte">
+            <p style="color: brown;">Spanish Latte</p>
+        </div>
+    </div>
+</div>
+
+<div class="section bg-lightblue">
+    <h1>My Favourite Animation</h1>
+    <div class="flex-container">
+        <div class="flex-item">
+            <img src="image/tangled.jpg" alt="rapunzel">
+            <p style="color: brown;">Tangled</p>
+        </div>
+        <div class="flex-item">
+            <img src="image/moana.jpg" alt="curgirl">
+            <p style="color: brown;">Moana</p>
+        </div>
+    </div>
+</div>
+
+<div class="section bg-beige">
+    <h1>My Favourite Songs</h1>
+    <div class="song-container">
+        <div class="song-item">
+            <div class="song-cover">
+                <img src="image/niki.jpg" alt="Anaheim" class="cover-img">
+            </div>
+            <div class="song-info">
+                <h3>Anaheim - Niki</h3>
+                <audio controls>
+                    <source src="audio/anaheim.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
+        <div class="song-item">
+            <div class="song-cover">
+                <image/img src="image/billie.jpg" alt="Birds of A Feather" class="cover-img">
+            </div>
+            <div class="song-info">
+                <h3>Birds Of A Feather - Billie Eilish</h3>
+                <audio controls>
+                    <source src="audio/boaf.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
+        <div class="song-item">
+            <div class="song-cover">
+                <img src="image/noh.jpg" alt="Rahsia Tuhan" class="cover-img">
+            </div>
+            <div class="song-info">
+                <h3>Rahsia Tuhan - Noh Hujan</h3>
+                <audio controls>
+                    <source src="audio/rahsiatuhan.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section bg-lightblue">
+    <h1>Random Things I Like</h1>
+    <ol class="random-things-list">
+        <li>
+            <span>Flowers</span>
+            <img src="gif/flowers.gif" class="inline-gif" alt="Flowers GIF">
+        </li>
+        <li>
+            <span>Skies and Sunset</span>
+            <img src="gif/sun.gif" class="inline-gif" alt="Skies and Sunset GIF">
+        </li>
+        <li>
+            <span>Snacks</span>
+            <img src="gif/snack.gif" class="inline-gif" alt="Snacks GIF">
+        </li>
+    </ol>
+</div>
+
+    <center>
+
+<center>
+    <button onclick="alert('Thank you for exploring my page!')">Click Me</button>
+</center>
+
+</body>
+</html>
