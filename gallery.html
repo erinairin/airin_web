@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airin's Gallery</title>
+    <style>
+        body {
+            background-image: url('image/orchid.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 5px 10%;
+            z-index: 1000;
+        }
+
+        nav img.logo {
+            width: 160px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-family: Arial, sans-serif; 
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: brown;
+            color: white;
+        }
+
+        nav ul li a.active {
+            background: #333;
+            color: white;
+        }
+	    
+        .countdown {
+            background: #fff;
+            border: 3px solid brown;
+            padding: 20px 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            max-width: 90%;
+        }
+
+        .countdown h1 {
+            font-size: 24px;
+            color: brown;
+            margin-bottom: 20px;
+        }
+
+        .time {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .time div {
+            background: #d8e8fc;
+            color: brown;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .time div span {
+            display: block;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .time div small {
+            font-size: 14px;
+            font-weight: normal;
+        }
+	    
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 90%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05); 
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+        }
+
+        .gallery-item {
+            flex: 1 1 calc(25% - 20px); 
+            max-width: calc(25% - 20px);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                flex: 1 1 100%; 
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .countdown {
+                padding: 10px 20px;
+            }
+
+            .time div {
+                padding: 5px 10px;
+            }
+
+            .time div span {
+                font-size: 30px;
+            }
+        }
+    </style>
+    <script>
+        function startCountdown(endDate) {
+            const timer = document.getElementById('timer');
+
+            function updateTimer() {
+                const now = new Date();
+                const timeLeft = new Date(endDate) - now;
+
+                if (timeLeft > 0) {
+                    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+                    const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+                    const seconds = Math.floor((timeLeft / 1000) % 60);
+
+                    timer.innerHTML = `
+                        <div><span>${days}</span><small>Days</small></div>
+                        <div><span>${hours}</span><small>Hours</small></div>
+                        <div><span>${minutes}</span><small>Minutes</small></div>
+                        <div><span>${seconds}</span><small>Seconds</small></div>
+                    `;
+                } else {
+                    timer.innerHTML = "<h2>Congratulations! Your Diploma has ended!</h2>";
+                    clearInterval(interval);
+                }
+            }
+
+            updateTimer();
+            const interval = setInterval(updateTimer, 1000);
+        }
+
+        window.onload = function() {
+            const countdownEndDate = "2025-02-23T23:59:59"; 
+            startCountdown(countdownEndDate);
+        };
+    </script>
+</head>
+<body>
+        <nav>
+            <img src="image/logo.png" class="logo" alt="Logo">
+            <ul>
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="family.html">FAMILY</a></li>
+        <li><a href="edu.html">EDUCATION</a></li>
+        <li><a href="experience.html">EXPERIENCES</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+            </ul>
+    </nav>
+
+    <div class="countdown">
+        <h1>Countdown to Diploma End</h1>
+        <div id="timer" class="time"></div>
+    </div>
+
+<div>
+<center>
+<audio controls>
+  <source src="audio/Longlive.ogg" type="audio/ogg">
+  <source src="audio/Longlive.mp3" type="audio/mpeg">
+</audio>
+</center>
+    </div>
+
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="image/cutegiler.jpg" alt="Art Piece 1">
+        </div>
+        <div class="gallery-item">
+            <img src="image/us.jpg" alt="Art Piece 2">
+        </div>
+        <div class="gallery-item">
+            <img src="image/miscuit.jpg" alt="Art Piece 3">
+        </div>
+        <div class="gallery-item">
+            <img src="image/we.jpg" alt="Art Piece 4">
+	</div>
+        <div class="gallery-item">
+            <img src="image/waniter.jpg" alt="Art Piece 4.1">
+	</div>
+        <div class="gallery-item">
+            <img src="image/solehah.jpg" alt="Art Piece 4.2">
+	</div>
+        <div class="gallery-item">
+            <img src="image/melaka.jpg" alt="Art Piece 4.3">
+	</div>
+        <div class="gallery-item">
+            <img src="image/kaswara.jpg" alt="Art Piece 4.4">
+	</div>
+        <div class="gallery-item">
+            <img src="image/cute.jpg" alt="Art Piece 5">
+        </div>
+        <div class="gallery-item">
+            <img src="image/44.jpg" alt="Art Piece 6">
+        </div>
+        <div class="gallery-item">
+            <img src="image/4.jpg" alt="Art Piece 7">
+        </div>
+        <div class="gallery-item">
+            <img src="image/apani.jpg" alt="Art Piece 8">
+        </div>
+        <div class="gallery-item">
+            <img src="image/doubleA.jpg" alt="Art Piece 10">
+        </div>
+        <div class="gallery-item">
+            <img src="image/erinmin.jpg" alt="Art Piece 11">
+        </div>
+        <div class="gallery-item">
+            <img src="image/onisu.jpg" alt="Art Piece 12">
+        </div>
+        <div class="gallery-item">
+            <img src="image/emayin.jpg" alt="Art Piece 13">
+        </div>
+        <div class="gallery-item">
+            <img src="image/marhaban.jpg" alt="Art Piece 14">
+        </div>
+        <div class="gallery-item">
+            <img src="image/wss.jpg" alt="Art Piece 15">
+	</div>
+        <div class="gallery-item">
+            <img src="image/bp1.jpg" alt="Art Piece 16">
+        </div>
+        <div class="gallery-item">
+            <img src="image/tomyam.jpg" alt="Art Piece 17">
+ 	</div>
+        <div class="gallery-item">
+            <img src="image/random.jpg" alt="Art Piece 18">
+        </div>
+        <div class="gallery-item">
+            <img src="image/classmates.jpg" alt="Art Piece 19">
+        </div>
+        <div class="gallery-item">
+            <img src="image/sunset.jpg" alt="Art Piece 20">
+        </div>
+        <div class="gallery-item">
+            <img src="image/gro.jpg" alt="Art Piece 21">
+        </div>
+	<div>
+	<video width="520" height="440" controls>
+            <source src="video/video.mp4" type="video/mp4">
+            <source src="video/video.ogg" type="video/ogg">
+	</video>
+        </div>
+</body>
+</html>

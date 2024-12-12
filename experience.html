@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Experience</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: #f1f8ff;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px 10%;
+            z-index: 1000;
+        }
+
+        nav img.logo {
+            width: 160px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: brown;
+            color: white;
+        }
+
+        nav ul li a.active {
+            background: #333;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(to bottom, #d8e8fc, #eff4fd);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: brown;
+            padding: 10px 10%;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+	    font-family: times new roman;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .hero .cta {
+            background: brown;
+            color: white;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .hero .cta:hover {
+            background: #333;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 50px 20px;
+            background: #fff;
+        }
+
+        .experience-card {
+            width: 320px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .experience-card h3 {
+            color: brown;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .experience-card ul {
+            list-style-type: square;
+            padding-left: 25px;
+            text-align: left;
+            color: #555;
+        }
+
+        .experience-card ul li {
+            margin-bottom: 8px;
+        }
+
+    .skills-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .skills-table th,
+    .skills-table td {
+        border: 1px solid brown;
+        padding: 12px 15px;
+    }
+
+    .skills-table th {
+        background-color: brown;
+        color: white;
+    }
+
+    .skills-table tr:nth-child(even) {
+        background-color: #fdfcfb;
+    }
+
+    .skills-table tr:hover {
+        background-color: #f5ebdc;
+        cursor: pointer;
+    }
+
+    /* Progress Bar Styling */
+    .progress-bar {
+        width: 100%;
+        background-color: #f5ebdc;
+        border-radius: 5px;
+        overflow: hidden;
+        height: 20px;
+        margin-bottom: 5px;
+        border: 1px solid brown;
+    }
+
+    .progress {
+        height: 100%;
+        background-color: brown;
+        text-align: right;
+        line-height: 20px;
+        color: white;
+        border-radius: 5px;
+        transition: width 0.4s ease;
+    }
+        /* Internship Images Section */
+        .internship-box {
+            padding: 40px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .internship-box h3 {
+            margin-bottom: 20px;
+            color: brown;
+            font-size: 24px;
+        }
+
+        .internship-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .internship-images img {
+            width: 20%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .internship-images img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .experience-card {
+                width: 90%;
+            }
+
+            .internship-images img {
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+        <nav>
+            <img src="image/logo.png" class="logo" alt="Logo">
+            <ul>
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="family.html">FAMILY</a></li>
+        <li><a href="edu.html">EDUCATION</a></li>
+        <li><a href="experience.html">EXPERIENCES</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+            </ul>
+</nav>
+    <section class="hero">
+        <h1>Job Experiences</h1>
+        <p>Explore my journey through an online business and a rewarding internship experience in the public sector. Learn valuable skills and insights I gained along the way.</p>
+        <a href="#experience" class="cta">Discover My Experience</a>
+    </section>
+
+    <section id="experience" class="experience-section">
+        <div class="experience-card">
+            <h3>Online Business Hijab</h3>
+            <ul>
+                <li>Learn to pack orders <sup>wrap, organize</sup></li>
+                <li>Learn how to store new stock</li>
+		<li>Print out customers' information sticker</li>
+                <li>Add knowledge about basic customer service</li>
+            </ul>
+        </div>
+
+        <div class="experience-card">
+            <h3>Internship - Majlis Perbandaran</h3>
+            <ul>
+                <li>Gain more experience in the public sector</li>
+                <li>Meet new people from various backgrounds</li>
+                <li>Enhance social skills through direct interaction</li>
+                <li>Learn how to organize staff training</li>
+            </ul>
+        </div>
+    </section>
+
+<div class="content" id="skills">
+    <table class="skills-table">
+        <thead>
+            <tr>
+                <th>Skill</th>
+                <th>Proficiency Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HTML & CSS</td>
+                <td>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 60%;"></div>
+                    </div>
+                    Intermediate
+                </td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 40%;"></div>
+                    </div>
+                    Basic proficiency
+                </td>
+            </tr>
+            <tr>
+                <td>Microsoft Office</td>
+                <td>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%;"></div>
+                    </div>
+                    Expert
+                </td>
+            </tr>
+            <tr>
+                <td>Team Management</td>
+                <td>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%;"></div>
+                    </div>
+                    Intermediate
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <section class="internship-box">
+        <h3>Internship Experience Photos</h3>
+        <div class="internship-images">
+            <img src="image/exp.jpg" alt="Internship Work 1">
+            <img src="image/expe.jpg" alt="Internship Work 2">
+            <img src="image/werkwerk.jpg" alt="Internship Work 3">
+            <img src="image/intern.jpg" alt="Internship Work 4">
+        </div>
+    </section>
+
+</body>
+</html>

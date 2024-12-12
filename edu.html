@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Background</title>
+    <style>
+        /* General Reset */
+        body, h1, h2, ul, li, p {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fdfcfb, #f5ebdc);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 5px 10%;
+            z-index: 1000;
+            font-family: Arial, sans-serif; 
+        }
+
+        nav img.logo {
+            width: 160px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: brown;
+            color: white;
+        }
+
+        nav ul li a.active {
+            background: #333;
+            color: white;
+        }
+
+        /* Page Header */
+        h1 {
+            text-align: center;
+            color: brown;
+            margin: 40px 0;
+            font-size: 36px;
+            font-family: times new roman;
+        }
+
+        /* Container for navigation boxes */
+        .education-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 10%;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Individual navigation box with semi-circle top */
+        .nav-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 30%;
+            padding: 50px;
+            background: #eff4fd;
+            border: 2px solid brown;
+            border-radius: 50px 50px 0 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-box h2 {
+            color: brown;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .nav-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-box a {
+            margin-top: 10px;
+            text-decoration: none;
+            color: white;
+            background: brown;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .nav-box a:hover {
+            background: #333;
+        }
+
+        /* Content Sections */
+        .content {
+            padding: 30px;
+            margin: 30px 10%;
+            border: 2px solid brown;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            color: brown;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            color: #333;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        /* Flexbox for Images */
+        .content div {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .content img {
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .content img.zoomed {
+            transform: scale(2);
+            z-index: 9999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .education-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-box {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .content div img {
+                width: 45%;
+            }
+
+/* Map Container */
+.map-container {
+    margin: 40px auto; /* Adds spacing between sections */
+    padding: 20px;
+    background: linear-gradient(135deg, #fdfcfb, #f5ebdc); /* Matches page background */
+    border: 2px solid brown;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 1000px;
+}
+
+/* Map Header Text */
+.map-container h2 {
+    color: brown;
+    font-family: 'Times New Roman', serif;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.map-container p {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Map Wrapper */
+.map-wrapper {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid brown; /* Subtle border for the map */
+}
+
+/* Responsive Map */
+iframe {
+    display: block;
+    width: 100%;
+    height: 450px; /* Adjust height for proportion */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <img src="image/logo.png" class="logo" alt="Logo">
+        <ul>
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="family.html">FAMILY</a></li>
+            <li><a href="edu.html">EDUCATION</a></li>
+            <li><a href="experience.html">EXPERIENCES</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <h1>Education Background</h1>
+
+    <!-- Education Navigation Boxes -->
+    <div class="education-nav">
+        <div class="nav-box">
+            <h2>Primary School</h2>
+            <a href="#primary">Read More</a>
+        </div>
+        <div class="nav-box">
+            <h2>High School</h2>
+            <a href="#highschool">Read More</a>
+        </div>
+        <div class="nav-box">
+            <h2>Diploma</h2>
+            <a href="#diploma">Read More</a>
+        </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="content" id="primary">
+        <h2>Primary School</h2>
+        <div>
+            <img src="image/ps1.jpg" alt="Primary School Image" class="zoomable">
+            <img src="image/ps2.jpg" alt="Primary School Image" class="zoomable">
+        </div>
+        <p>My primary school, Sekolah Kebangsaan Bandar Sungai Buaya, was near my
+	house which is 5 minutes to arrive. Here I learned the basics and developed
+	a love for learning. Honestly, I did not really excell in academic during my
+	primary time. I was more focused on curriculum activity such as Puteri Islam
+	and handball. During my involvement in Puteri Islam, I participate in Donut
+	making competition. Me and my partner win the first round that lead us to the
+	next round which is as a representative of the district, Hulu Selangor. We win
+	second place and successfully made the school proud. Other than that, I also
+	joined handball as a wall position. I remember how hard me and my team pracice
+	to participate in the competition amongst all schools in Hulu Selangor. For this
+	competition, we win and get to participate on the next level which is a
+	representative of Hulu selangor along with all district schools. I remember
+	I receive a certificate for Tokoh Wirama in Handball. In academic, i did excell
+	in some years which allow me to join and got awarded during end-year excellent
+	award ceremony. I realize that primary school was a crucial part of my foundation
+	in education that makes me who I am today.</p>
+    </div>
+
+    <div class="content" id="highschool">
+        <h2>High School</h2>
+        <div>
+            <img src="image/hs1.jpg" alt="High School Image" class="zoomable">
+            <img src="image/hs2.jpg" alt="High School Image" class="zoomable">
+        </div>
+        <p>When High School started, I begin to focus more on my academic goals
+	and tone down my sports and curricular activities. I got better in terms
+	of grades during this time. I started to score in science, got B in Math
+	for the first time during my PT3 exam, and tried to excell in other subjects.
+	I was so proud of myself for trying so hard to work on the academic that i
+	once never really focused on. During form 4 and form 5, I was assigned business
+	class as my core subject. Covid-19 hit during that time that made me kind of
+	losing focused in academic. I got to admit that studying alone at home without
+	friends and teachers to teach you physically was so hard. It challenge me to be
+	more focused on class, which I found it really hard to do. But, I still have good
+	times with my high school friends as we take the challenges together, supported
+	each other and be satisfied with our SPM result. My high school was really the
+	jumping stone of my life that makes me want to do better in the future.</p>
+    </div>
+
+    <div class="content" id="diploma">
+        <h2>Diploma</h2>
+        <div>
+            <img src="image/dl1.jpg" alt="Diploma Image" class="zoomable">
+            <img src="image/dl2.jpg" alt="Diploma Image" class="zoomable">
+        </div>
+        <p>Diploma starts in 2022. I remember applying for diploma and putting
+	Information Management as my fist choice because I read somewhere that
+	you rarely get the first choice. But here I am, studying Information
+	Management in Segamat, Johor. Far away from home. I was so conflicted
+	with my decision when I get to know that I get a far campus because I
+	never stayed this far away from home. But Alhamdulillah, I like how my
+	life turned out now. I am currently in my final semester of diploma.
+	I had to admit that it was not an easy journey. Learning something that
+	was never my intention or interest, it was tiring, challenging, stressful
+	and complicated but I enjoy it anyway. I got good grades all thanks to Allah,
+	my groupmates and my hard work. It is also bearable because I got to meet kind
+	people along the way. I do think that all the people that I met during diploma
+	would be the most memorable people have ever met in life. Thank you to my classmates,
+	groupmates and my dimploma bestfriends who have made this especially hard journey fun.
+	Without them, I would not be the person I am today. For my own hope, I hope my future
+	self will be so much better than who I am today and may succes accompany me along all
+	my journey.</p>
+
+    <div class="map-container">
+    <h3 style="color: maroon;">Current wherebeing:</h3>
+    <p><i class="location-icon">📍</i> UiTM Johor, Kampus Segamat</p>
+    <div class="map-wrapper">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317.6361603595031!2d102.7267277!3d2.4879644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31ce2c6ce929a871%3A0xc0dfa5fe6922a589!2sUiTM%20Cawangan%20Johor%2C%20Kampus%20Segamat!5e0!3m2!1sen!2smy!4v1700704510569!5m2!1sen!2smy" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
+
+    <script>
+        // Add zoom effect to images
+        const images = document.querySelectorAll('.zoomable');
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                image.classList.toggle('zoomed');
+            });
+        });
+    </script>
+</body>
+</html>
